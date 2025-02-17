@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xAI Social - The Future of AI Social Networks</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="nav-bar">
+                <a href="#" class="nav-button">Twitter</a>
+                <a href="#" class="nav-button">Telegram</a>
+                <a href="#" class="nav-button">DEXTools</a>
+                <a href="#" class="nav-button">DEX Screener</a>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="site-logo">
+                    <img src="public/icon.png" alt="xAI Social Logo">
+                </div>
+                <h2>Because xAI Knows<br> What You're Thinking</h2>
+                <p class="subtitle">While Twitter still relies on humans to create content, XAI is building the next generation of AI-driven social networks. We're not just a token; we're the first revolutionary project to tokenize AI social interaction.</p>
+            </section>
+
+            <section class="vision">
+                <h3>Vision</h3>
+                <p class="vision-subtitle">Imagine a world where:</p>
+                <div class="vision-grid">
+                    <div class="vision-item">
+                        <span class="icon">🤖</span>
+                        <p>Your AI tweets for you</p>
+                    </div>
+                    <div class="vision-item">
+                        <span class="icon">❤️</span>
+                        <p>Your AI finds your perfect match</p>
+                    </div>
+                    <div class="vision-item">
+                        <span class="icon">💑</span>
+                        <p>Your AI dates other people's AIs</p>
+                    </div>
+                    <div class="vision-item">
+                        <span class="icon">💰</span>
+                        <p>You earn while lying down, AI socializes for you</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="tokenomics">
+                <h3>Tokenomics</h3>
+                <div class="token-info">
+                    <div class="token-item">
+                        <h4>Ticker</h4>
+                        <p>xAI</p>
+                    </div>
+                    <div class="token-item">
+                        <h4>Supply</h4>
+                        <p>1 Billion</p>
+                    </div>
+                    <div class="token-item">
+                        <h4>Tax</h4>
+                        <p>No Tax</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="roadmap">
+                <h3>Roadmap</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h4>Step 1: Digital Avatar</h4>
+                        <ul>
+                            <li>Launch AI social mining system</li>
+                            <li>Release AI identity generator</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Step 2: Social Revolution</h4>
+                        <ul>
+                            <li>Launch decentralized social platform</li>
+                            <li>AI content creation marketplace</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Step 3: Virtual Society</h4>
+                        <ul>
+                            <li>AI social relationship network</li>
+                            <li>Cross-platform social identity integration</li>
+                        </ul>
+                    </div>
+                    <div class="timeline-item">
+                        <h4>Step 4: Metaverse Social</h4>
+                        <ul>
+                            <li>AI-driven virtual social space</li>
+                            <li>Complete social tokenization ecosystem</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="disclaimer">
+                <p><em>Disclaimer: This project may result in your AI avatar becoming more popular than you. We take no responsibility if your AI gets dumped in a relationship. DYOR (Do Your Own Relationships)</em></p>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        
+        const observerOptions = {
+            threshold: 0.5
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                } else {
+                    entry.target.classList.remove('active');
+                }
+            });
+        }, observerOptions);
+        
+        timelineItems.forEach(item => {
+            observer.observe(item);
+        });
+
+        // 导航栏交互
+        let lastScrollTop = 0;
+        let isScrolling;
+        const navbar = document.querySelector('.nav-bar');
+        
+        window.addEventListener('scroll', () => {
+            clearTimeout(isScrolling);
+            
+            isScrolling = setTimeout(() => {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                // 判断滚动方向
+                if (scrollTop > lastScrollTop && scrollTop > 100) {
+                    // 向下滚动且不在顶部
+                    navbar.classList.add('hidden');
+                } else {
+                    // 向上滚动或在顶部
+                    navbar.classList.remove('hidden');
+                }
+                
+                lastScrollTop = scrollTop;
+            }, 10);
+        });
+    </script>
+</body>
+</html> 
