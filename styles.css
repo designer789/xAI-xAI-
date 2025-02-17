@@ -440,15 +440,18 @@ h3 {
     
     .nav-bar {
         top: 1rem;
-        padding: 0.5rem;
+        padding: 0.75rem;
         max-width: calc(100% - 2rem);
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
     }
     
     .nav-button {
-        padding: 0.5rem 1rem;
+        padding: 0.5rem;
         font-size: 0.9rem;
+        text-align: center;
+        width: 100%;
     }
     
     section {
@@ -608,5 +611,57 @@ footer {
     .social-icon {
         width: 20px;
         height: 20px;
+    }
+}
+
+.preview-image {
+    margin: 4rem auto;
+    padding: 0 2rem;
+    max-width: 800px;
+    width: 40%;
+}
+
+.full-width-image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.full-width-image:hover {
+    transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+    .preview-image {
+        margin: 2rem auto;
+        padding: 0 1rem;
+        width: 60%;
+    }
+}
+
+/* 在媒体查询中添加鼠标效果的移除 */
+@media (max-width: 1024px) {  /* 平板和移动端 */
+    * {
+        cursor: auto !important;  /* 恢复默认光标 */
+    }
+    
+    .cursor {
+        display: none !important;  /* 隐藏自定义光标 */
+    }
+    
+    a, button, [role="button"] {
+        cursor: pointer !important;  /* 可点击元素使用手型光标 */
+    }
+    
+    /* 移除所有悬停效果 */
+    .social-icon:hover,
+    .nav-button:hover,
+    .vision-item:hover,
+    .token-item:hover,
+    .timeline-item:hover,
+    .site-logo:hover,
+    .footer-logo:hover,
+    .full-width-image:hover {
+        transform: none !important;
     }
 } 
