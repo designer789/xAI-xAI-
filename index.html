@@ -5,33 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>xAI Social - The Future of AI Social Networks</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <header>
-            <nav class="nav-bar">
-                <a href="#" class="nav-button">Twitter</a>
-                <a href="#" class="nav-button">Telegram</a>
-                <a href="#" class="nav-button">DEXTools</a>
-                <a href="#" class="nav-button">DEX Screener</a>
-            </nav>
+            <div class="logo">
+                <!-- 简约风格的SVG logo -->
+                <svg width="50" height="50" viewBox="0 0 50 50">
+                    <path d="M25 5 L45 35 L5 35 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <circle cx="25" cy="25" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                <h1>xAI Social</h1>
+            </div>
         </header>
 
         <main>
             <section class="hero">
-                <div class="site-logo">
-                    <img src="public/icon.png" alt="xAI Social Logo">
-                </div>
-                <h2>Because xAI Knows<br> What You're Thinking</h2>
+                <h2>Because xAI Knows What You're Thinking</h2>
                 <p class="subtitle">While Twitter still relies on humans to create content, XAI is building the next generation of AI-driven social networks. We're not just a token; we're the first revolutionary project to tokenize AI social interaction.</p>
             </section>
 
             <section class="vision">
                 <h3>Vision</h3>
-                <p class="vision-subtitle">Imagine a world where:</p>
                 <div class="vision-grid">
                     <div class="vision-item">
                         <span class="icon">🤖</span>
@@ -109,51 +104,5 @@
             </section>
         </main>
     </div>
-
-    <script>
-        const timelineItems = document.querySelectorAll('.timeline-item');
-        
-        const observerOptions = {
-            threshold: 0.5
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                } else {
-                    entry.target.classList.remove('active');
-                }
-            });
-        }, observerOptions);
-        
-        timelineItems.forEach(item => {
-            observer.observe(item);
-        });
-
-        // 导航栏交互
-        let lastScrollTop = 0;
-        let isScrolling;
-        const navbar = document.querySelector('.nav-bar');
-        
-        window.addEventListener('scroll', () => {
-            clearTimeout(isScrolling);
-            
-            isScrolling = setTimeout(() => {
-                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-                
-                // 判断滚动方向
-                if (scrollTop > lastScrollTop && scrollTop > 100) {
-                    // 向下滚动且不在顶部
-                    navbar.classList.add('hidden');
-                } else {
-                    // 向上滚动或在顶部
-                    navbar.classList.remove('hidden');
-                }
-                
-                lastScrollTop = scrollTop;
-            }, 10);
-        });
-    </script>
 </body>
 </html> 
